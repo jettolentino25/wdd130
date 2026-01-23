@@ -1,14 +1,16 @@
-:root {
-    --heading-background-color: #f06;
-    --heading-text-color: #333;
-    --heading-font: 'Lucida Sans Unicode', Helvetica, sans-serif;
-    --padding: 1rem;
-    --border: 1px solid rgb(0 0 0 / 0.1);
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+main {
+    max-width: 840px
 }
 
 nav {
     background-color: darkblue;
-    padding: 10px;
+    padding: 5px;
 }
 
 nav a {
@@ -21,13 +23,25 @@ h1 {
     color: darkblue;
 }
 
-main {
-    max-width: 840px;
-    margin: 0 auto;
-    padding: 1rem;
+aside {
+    position: relative;
+    width: 20rem;
+    text-align: center;
+}
+
+aside h2 {
+    position: absolute;
+    top: 25px;
+    left: 90px;
+}
+
+aside img {
+    width: 200px;
+    height: auto;
 }
 
 main img {
+    float: right;
     width: 150px;
     height: auto;
     border: 1px solid black;
@@ -36,26 +50,21 @@ main img {
 }
 
 p {
-    padding: 0px;
-}
-
-aside {
-    width: 20rem;
-    margin: 1rem;
-    border: 1px solid rgba(0, 0, 0, 0.2);
-    padding: 1rem;
-    background-color: #DADADA;
-    color: #333;
-    text-align: center;
-}
-
-aside img {
-    width: 200px;
-    height: auto;
+    padding: 0;
 }
 
 footer {
     margin-top: 1em;
     border-top: 1px solid #000;
     text-align: center;
+}
+
+/* CSS class selectors */
+
+.box {
+    margin: 1rem;
+    padding: 1rem;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    background-color: #ddd;
+    color: black;
 }
