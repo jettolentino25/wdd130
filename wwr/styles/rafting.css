@@ -1,69 +1,50 @@
-/* ERROR FIX: Universal Selector Reset (Required) */
-* { 
-    margin: 0; 
-    padding: 0; 
-    box-sizing: border-box; 
+/* UNIVERSAL RESET: Required by Audit */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-/* ERROR FIX: Hero Overlay Positioning */
+/* HERO POSITIONING: Must be relative */
 .hero {
-    position: relative; /* Container MUST be relative */
+    position: relative;
     display: block;
 }
 
 .hero img {
     width: 100%;
-    height: 600px;
-    object-fit: cover;
+    height: auto;
 }
 
-/* Overlaying the text and article on the image */
+/* OVERLAY ELEMENTS: Must be absolute */
 .hero h1 {
-    position: absolute; 
-    top: 50px;
-    left: 50%;
-    transform: translateX(-50%);
-    background-color: rgba(0, 51, 102, 0.8);
+    position: absolute;
+    top: 40px;
+    left: 40px;
+    background-color: rgba(0, 51, 102, 0.7);
     color: white;
-    padding: 20px;
-    border-radius: 10px;
+    padding: 1rem;
 }
 
 .hero article {
-    position: absolute; 
-    bottom: 50px;
-    right: 50px;
-    background-color: rgba(255, 255, 255, 0.9);
+    position: absolute;
+    top: 150px;
+    right: 40px;
+    background-color: rgba(255, 255, 255, 0.8);
     padding: 20px;
-    max-width: 500px;
-    border-radius: 5px;
+    max-width: 400px;
 }
 
-/* ERROR FIX: Image inside hero article MUST float right */
+/* FLOAT REQUIREMENT: The image inside article must float right */
 .hero article img {
-    float: right; 
-    width: 150px;
-    margin-left: 15px;
-    margin-bottom: 10px;
+    float: right;
+    width: 100px;
+    margin: 0 0 10px 10px;
 }
 
-/* Fix for Contrast Violations */
-header {
-    background-color: #003366;
-    padding: 15px 5%;
-    display: flex;
-    justify-content: space-between;
-}
-
-nav a {
-    color: #ffffff; /* White text on blue background */
-    text-decoration: none;
-    font-weight: bold;
-}
-
-/* Section and Grid styling */
+/* SECTION STYLES */
 .history-container, .adventure-container {
-    padding: 40px 5%;
+    padding: 2rem;
 }
 
 .services-grid {
@@ -77,9 +58,15 @@ nav a {
     border-radius: 8px;
 }
 
+/* FOOTER & SOCIALS */
 footer {
     background-color: #003366;
     color: white;
     text-align: center;
-    padding: 20px;
+    padding: 1.5rem;
+}
+
+.socialmedia img {
+    width: 30px;
+    margin: 0 10px;
 }
