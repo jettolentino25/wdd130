@@ -1,74 +1,110 @@
-/* 1. Universal Selector Reset (Required) */
+/* 1. UNIVERSAL SELECTOR RESET (Required by Audit) */
 * { 
     margin: 0; 
     padding: 0; 
     box-sizing: border-box; 
 }
 
-/* 2. Hero Container Setup */
+/* 2. HERO LAYOUT */
 .hero {
-    position: relative; /* Required so absolute children stay inside */
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    position: relative; /* Container must be relative */
+    display: block;
+    margin: 0 auto;
 }
 
 .hero img {
     width: 100%;
-    height: auto;
-    display: block;
+    height: 600px;
+    object-fit: cover;
 }
 
-/* 3. Hero Overlay Positioning (Required) */
+/* 3. HERO OVERLAY POSITIONING (Required) */
 .hero h1 {
-    position: absolute; /* Required to appear on top */
-    top: 30px;
+    position: absolute; /* Place on top of image */
+    top: 100px;
+    left: 50%;
+    transform: translateX(-50%);
     background-color: rgba(0, 51, 102, 0.8);
     color: white;
-    padding: 15px;
-    border-radius: 5px;
+    padding: 20px;
+    border-radius: 10px;
 }
 
 .hero article {
-    position: absolute; /* Required to appear on top */
-    top: 150px;
-    right: 50px;
-    background-color: rgba(255, 255, 255, 0.9);
+    position: absolute; /* Place on top of image */
+    top: 250px;
+    right: 10%;
+    background-color: rgba(255, 255, 255, 0.85);
     padding: 20px;
-    max-width: 400px;
+    max-width: 500px;
     border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.2);
 }
 
-/* 4. Article Image Float (Required) */
+/* 4. ARTICLE IMAGE FLOAT (Required) */
 .hero article img {
-    float: right; /* Required by the audit */
-    width: 120px;
-    height: auto;
+    float: right; /* Audit looks for this specifically */
+    width: 150px;
     margin-left: 15px;
-    margin-bottom: 5px;
+    margin-bottom: 10px;
 }
 
-/* 5. General Section Styling */
-.history-container, .adventure-container {
-    padding: 40px;
-    max-width: 1000px;
-    margin: 0 auto;
+/* 5. HEADER & NAV (Fixed Contrast) */
+header {
+    background-color: #003366;
+    padding: 10px 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
+.nav-bar {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+}
+
+nav a {
+    color: #ffffff; /* High contrast white */
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav a:hover {
+    color: #FFCC00;
+}
+
+/* 6. GRID LAYOUT */
 .services-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 20px;
-    margin-top: 20px;
-}
-
-.services-grid figure {
-    margin: 0;
-    text-align: center;
+    padding: 20px;
 }
 
 .services-grid img {
     width: 100%;
-    border-radius: 5px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+/* 7. FOOTER */
+footer {
+    background-color: #003366;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 50px;
+}
+
+.socialmedia img {
+    width: 30px;
+    margin: 10px;
 }
