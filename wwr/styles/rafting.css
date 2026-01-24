@@ -1,64 +1,24 @@
-/* ROOT VARIABLES - Every defined variable is now used below */
+/* 1. ROOT VARIABLES - All variables must be defined AND used */
 :root {
     --primary-color: #003366;
     --accent-color: #FFCC00;
     --white: #ffffff;
     --text-color: #333333;
-    --transparent-blue: rgba(0, 51, 102, 0.85); /* Darkened for contrast */
+    --transparent-blue: rgba(0, 51, 102, 0.85);
     --transparent-white: rgba(255, 255, 255, 0.95);
 }
 
-/* UNIVERSAL RESET */
+/* 2. UNIVERSAL RESET */
 * { 
     margin: 0; 
     padding: 0; 
     box-sizing: border-box; 
 }
 
-/* HERO SECTION - Uses position: relative as required */
-.hero {
-    position: relative;
-    display: block;
-}
-
-.hero img {
-    width: 100%;
-    height: auto;
-}
-
-/* HERO OVERLAY - Uses position: absolute as required */
-.hero h1 {
-    position: absolute;
-    top: 50px;
-    left: 50%;
-    transform: translateX(-50%);
-    background-color: var(--transparent-blue); /* Used variable */
-    color: var(--white); /* Used variable */
-    padding: 1.5rem;
-    text-align: center;
-}
-
-.hero article {
-    position: absolute;
-    bottom: 20px;
-    right: 5%;
-    background-color: var(--transparent-white); /* Used variable */
-    color: var(--text-color); /* Used variable */
-    padding: 20px;
-    max-width: 400px;
-}
-
-/* ARTICLE IMAGE - Uses float: right as required */
-.hero article img {
-    float: right;
-    width: 100px;
-    margin-left: 10px;
-}
-
-/* HEADER & NAVIGATION - Fixes Color Contrast */
+/* 3. HEADER & NAV - Fixed Contrast Error */
 header {
     background-color: var(--primary-color);
-    padding: 20px;
+    padding: 20px 5%;
 }
 
 .nav-bar {
@@ -67,7 +27,7 @@ header {
     align-items: center;
 }
 
-/* Corrects the low contrast error by forcing links to white */
+/* FIXED: Setting color to var(--white) solves the 1.67:1 contrast error */
 header nav a {
     color: var(--white); 
     text-decoration: none;
@@ -75,39 +35,85 @@ header nav a {
     margin-left: 20px;
 }
 
-/* Uses --accent-color to solve the 'Unused Variable' error */
 header nav a:hover {
     color: var(--accent-color);
     text-decoration: underline;
 }
 
-/* SOCIAL MEDIA LINKS - Removes underlines as required */
-.socialmedia a {
-    text-decoration: none;
+/* 4. HERO SECTION - Required Positioning */
+.hero {
+    position: relative;
+    display: block;
 }
 
-/* GRID LAYOUT */
+.hero img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.hero h1 {
+    position: absolute;
+    top: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: var(--transparent-blue);
+    color: var(--white);
+    padding: 1.5rem;
+    text-align: center;
+}
+
+/* FIXED: Applied var(--transparent-white) to clear the "Unused Variable" error */
+.hero article {
+    position: absolute;
+    bottom: 30px;
+    right: 5%;
+    background-color: var(--transparent-white); 
+    color: var(--text-color);
+    padding: 20px;
+    max-width: 450px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+}
+
+/* 5. FLOAT REQUIREMENT */
+.hero article img {
+    float: right;
+    width: 120px;
+    margin-left: 15px;
+    margin-bottom: 10px;
+}
+
+
+/* 6. CONTENT & GRID */
+.history-container, .adventure-container {
+    padding: 50px 10%;
+}
+
 .services-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 20px;
-    padding: 20px;
+    gap: 25px;
 }
 
 .services-grid img {
     width: 100%;
-    border-radius: 5px;
+    border-radius: 8px;
 }
 
-/* FOOTER */
+/* 7. FOOTER & SOCIAL MEDIA */
 footer {
     background-color: var(--primary-color);
     color: var(--white);
     text-align: center;
-    padding: 25px;
+    padding: 30px;
+}
+
+/* FIXED: Removes underlines from social media icons as required */
+.socialmedia a {
+    text-decoration: none;
 }
 
 .socialmedia img {
     width: 30px;
-    margin: 10px;
+    margin: 0 10px;
 }
