@@ -1,10 +1,11 @@
-/* FIXED: Added CSS Variables in :root */
 :root {
     --primary-color: #003366;
     --accent-color: #FFCC00;
     --white: #ffffff;
-    --transparent-blue: rgba(0, 51, 102, 0.7);
-    --transparent-white: rgba(255, 255, 255, 0.85);
+    --text-color: #333333;
+    /* Darkened for better contrast with white text */
+    --transparent-blue: rgba(0, 51, 102, 0.85); 
+    --transparent-white: rgba(255, 255, 255, 0.95);
 }
 
 /* UNIVERSAL SELECTOR RESET */
@@ -16,7 +17,7 @@
 
 /* HERO LAYOUT */
 .hero {
-    position: relative; /* REQUIRED */
+    position: relative;
     display: block;
 }
 
@@ -28,36 +29,41 @@
 
 /* HERO OVERLAY POSITIONING */
 .hero h1 {
-    position: absolute; /* REQUIRED */
-    top: 100px;
+    position: absolute;
+    top: 50px;
     left: 50%;
     transform: translateX(-50%);
     background-color: var(--transparent-blue);
     color: var(--white);
     padding: 20px;
+    text-align: center;
 }
 
 .hero article {
-    position: absolute; /* REQUIRED */
-    top: 250px;
-    right: 10%;
-    background-color: var(--transparent-white);
+    position: absolute;
+    bottom: 30px;
+    right: 5%;
+    background-color: var(--white); /* Fully white background for best contrast */
+    color: var(--text-color);
     padding: 20px;
-    max-width: 500px;
+    max-width: 450px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.2);
 }
 
 /* ARTICLE IMAGE FLOAT */
 .hero article img {
-    float: right; /* REQUIRED */
+    float: right;
     width: 150px;
     margin-left: 15px;
     margin-bottom: 10px;
 }
 
+
+
 /* HEADER & NAVIGATION */
 header {
     background-color: var(--primary-color);
-    padding: 20px;
+    padding: 15px 5%;
 }
 
 .nav-bar {
@@ -73,21 +79,37 @@ nav a {
     margin-left: 20px;
 }
 
-/* FIXED: Social Media Link decoration removal */
+nav a:hover {
+    color: var(--accent-color);
+    text-decoration: underline;
+}
+
+/* SOCIAL MEDIA LINKS */
 .socialmedia a {
     text-decoration: none;
 }
 
 /* GRID LAYOUT */
+.history-container, .adventure-container {
+    padding: 40px 5%;
+}
+
+.history-content {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
 .services-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 20px;
-    padding: 20px;
+    padding: 20px 0;
 }
 
 .services-grid img {
     width: 100%;
+    height: auto;
     border-radius: 8px;
 }
 
@@ -96,10 +118,15 @@ footer {
     background-color: var(--primary-color);
     color: var(--white);
     text-align: center;
-    padding: 20px;
+    padding: 30px;
 }
 
 .socialmedia img {
     width: 30px;
-    margin: 10px;
+    margin: 0 10px;
+    transition: 0.3s;
+}
+
+.socialmedia img:hover {
+    transform: scale(1.1);
 }
