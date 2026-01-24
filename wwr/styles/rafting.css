@@ -1,56 +1,89 @@
-/* UNIVERSAL RESET: Required by Audit */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+/* FIXED: Added CSS Variables in :root */
+:root {
+    --primary-color: #003366;
+    --accent-color: #FFCC00;
+    --white: #ffffff;
+    --transparent-blue: rgba(0, 51, 102, 0.7);
+    --transparent-white: rgba(255, 255, 255, 0.85);
 }
 
-/* HERO POSITIONING: Must be relative */
+/* UNIVERSAL SELECTOR RESET */
+*, *::before, *::after { 
+    margin: 0; 
+    padding: 0; 
+    box-sizing: border-box; 
+}
+
+/* HERO LAYOUT */
 .hero {
-    position: relative;
+    position: relative; /* REQUIRED */
     display: block;
 }
 
 .hero img {
     width: 100%;
     height: auto;
+    display: block;
 }
 
-/* OVERLAY ELEMENTS: Must be absolute */
+/* HERO OVERLAY POSITIONING */
 .hero h1 {
-    position: absolute;
-    top: 40px;
-    left: 40px;
-    background-color: rgba(0, 51, 102, 0.7);
-    color: white;
-    padding: 1rem;
+    position: absolute; /* REQUIRED */
+    top: 100px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: var(--transparent-blue);
+    color: var(--white);
+    padding: 20px;
 }
 
 .hero article {
-    position: absolute;
-    top: 150px;
-    right: 40px;
-    background-color: rgba(255, 255, 255, 0.8);
+    position: absolute; /* REQUIRED */
+    top: 250px;
+    right: 10%;
+    background-color: var(--transparent-white);
     padding: 20px;
-    max-width: 400px;
+    max-width: 500px;
 }
 
-/* FLOAT REQUIREMENT: The image inside article must float right */
+/* ARTICLE IMAGE FLOAT */
 .hero article img {
-    float: right;
-    width: 100px;
-    margin: 0 0 10px 10px;
+    float: right; /* REQUIRED */
+    width: 150px;
+    margin-left: 15px;
+    margin-bottom: 10px;
 }
 
-/* SECTION STYLES */
-.history-container, .adventure-container {
-    padding: 2rem;
+/* HEADER & NAVIGATION */
+header {
+    background-color: var(--primary-color);
+    padding: 20px;
 }
 
+.nav-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav a {
+    color: var(--white);
+    text-decoration: none;
+    font-weight: bold;
+    margin-left: 20px;
+}
+
+/* FIXED: Social Media Link decoration removal */
+.socialmedia a {
+    text-decoration: none;
+}
+
+/* GRID LAYOUT */
 .services-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 20px;
+    padding: 20px;
 }
 
 .services-grid img {
@@ -58,15 +91,15 @@
     border-radius: 8px;
 }
 
-/* FOOTER & SOCIALS */
+/* FOOTER */
 footer {
-    background-color: #003366;
-    color: white;
+    background-color: var(--primary-color);
+    color: var(--white);
     text-align: center;
-    padding: 1.5rem;
+    padding: 20px;
 }
 
 .socialmedia img {
     width: 30px;
-    margin: 0 10px;
+    margin: 10px;
 }
