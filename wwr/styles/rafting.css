@@ -1,0 +1,50 @@
+/* 1. Universal Selector Reset (Required by Audit) */
+* { 
+    margin: 0; 
+    padding: 0; 
+    box-sizing: border-box; 
+}
+
+/* 2. Hero Overlay Positioning */
+.hero {
+    position: relative; /* Required */
+    display: block;
+}
+
+.hero img {
+    width: 100%;
+    height: auto;
+}
+
+/* Position the H1 and Article on top of the Hero Image */
+.hero h1, .hero article {
+    position: absolute; /* Required */
+}
+
+.hero h1 {
+    top: 50px;
+    left: 50px;
+    color: white;
+    background-color: rgba(0, 51, 102, 0.8);
+    padding: 10px;
+}
+
+.hero article {
+    bottom: 50px;
+    right: 50px;
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    max-width: 400px;
+}
+
+/* 3. Article Image Float (Required by Audit) */
+.hero article img {
+    float: right; /* Required */
+    width: 100px;
+    margin-left: 15px;
+}
+
+/* 4. Fix Contrast Violation (Header Text) */
+header nav ul li a {
+    color: #ffffff; /* Use white instead of grey to pass contrast audit */
+}
