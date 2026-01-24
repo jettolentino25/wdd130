@@ -34,9 +34,13 @@ header {
     z-index: 1000;
 }
 
+
+
+
 header img {
-    height: 70px; /* Adjust based on your logo shape */
+    height: 180px; /* Adjust based on your logo shape */
     width: auto;
+    
 }
 
 nav ul {
