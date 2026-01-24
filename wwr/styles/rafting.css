@@ -15,10 +15,14 @@
     box-sizing: border-box; 
 }
 
-/* 3. HEADER & NAV - Fixes the 1.67:1 contrast violation */
+/* 3. HEADER & NAV - WCAG contrast fixed */
 header {
     background-color: var(--primary-color);
     padding: 20px 5%;
+}
+
+header h1 {
+    color: var(--white);
 }
 
 .nav-bar {
@@ -27,7 +31,6 @@ header {
     align-items: center;
 }
 
-/* FIXED: Forcing color to var(--white) solves the contrast ratio error in header */
 header nav a {
     color: var(--white); 
     text-decoration: none;
@@ -35,16 +38,14 @@ header nav a {
     margin-left: 20px;
 }
 
-/* FIXED: Using --accent-color here clears the 'Unused Variable' audit check */
 header nav a:hover {
     color: var(--accent-color);
     text-decoration: underline;
 }
 
-/* 4. HERO SECTION - Required Positioning */
+/* 4. HERO SECTION */
 .hero {
     position: relative;
-    display: block;
 }
 
 .hero img {
@@ -53,7 +54,6 @@ header nav a:hover {
     display: block;
 }
 
-/* FIXED: Applying var(--white) fixes the second contrast violation in h1 text */
 .hero h1 {
     position: absolute;
     top: 50px;
@@ -65,7 +65,7 @@ header nav a:hover {
     text-align: center;
 }
 
-/* FIXED: Using --transparent-white clears the final unused variable flag */
+/* Hero Article */
 .hero article {
     position: absolute;
     bottom: 30px;
@@ -105,7 +105,6 @@ footer {
     padding: 30px;
 }
 
-/* FIXED: Removes underlines from social media links as required by the audit */
 .socialmedia a {
     text-decoration: none;
 }
