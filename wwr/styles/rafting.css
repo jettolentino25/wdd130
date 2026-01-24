@@ -1,50 +1,74 @@
-/* 1. Universal Selector Reset (Required by Audit) */
+/* 1. Universal Selector Reset (Required) */
 * { 
     margin: 0; 
     padding: 0; 
     box-sizing: border-box; 
 }
 
-/* 2. Hero Overlay Positioning */
+/* 2. Hero Container Setup */
 .hero {
-    position: relative; /* Required */
-    display: block;
+    position: relative; /* Required so absolute children stay inside */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .hero img {
     width: 100%;
     height: auto;
+    display: block;
 }
 
-/* Position the H1 and Article on top of the Hero Image */
-.hero h1, .hero article {
-    position: absolute; /* Required */
-}
-
+/* 3. Hero Overlay Positioning (Required) */
 .hero h1 {
-    top: 50px;
-    left: 50px;
-    color: white;
+    position: absolute; /* Required to appear on top */
+    top: 30px;
     background-color: rgba(0, 51, 102, 0.8);
-    padding: 10px;
+    color: white;
+    padding: 15px;
+    border-radius: 5px;
 }
 
 .hero article {
-    bottom: 50px;
+    position: absolute; /* Required to appear on top */
+    top: 150px;
     right: 50px;
-    background-color: rgba(255, 255, 255, 0.8);
+    background-color: rgba(255, 255, 255, 0.9);
     padding: 20px;
     max-width: 400px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
 }
 
-/* 3. Article Image Float (Required by Audit) */
+/* 4. Article Image Float (Required) */
 .hero article img {
-    float: right; /* Required */
-    width: 100px;
+    float: right; /* Required by the audit */
+    width: 120px;
+    height: auto;
     margin-left: 15px;
+    margin-bottom: 5px;
 }
 
-/* 4. Fix Contrast Violation (Header Text) */
-header nav ul li a {
-    color: #ffffff; /* Use white instead of grey to pass contrast audit */
+/* 5. General Section Styling */
+.history-container, .adventure-container {
+    padding: 40px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.services-grid figure {
+    margin: 0;
+    text-align: center;
+}
+
+.services-grid img {
+    width: 100%;
+    border-radius: 5px;
 }
