@@ -1,15 +1,14 @@
-/* 1. UNIVERSAL SELECTOR RESET (Required by Audit) */
+/* ERROR FIX: Universal Selector Reset (Required) */
 * { 
     margin: 0; 
     padding: 0; 
     box-sizing: border-box; 
 }
 
-/* 2. HERO LAYOUT */
+/* ERROR FIX: Hero Overlay Positioning */
 .hero {
-    position: relative; /* Container must be relative */
+    position: relative; /* Container MUST be relative */
     display: block;
-    margin: 0 auto;
 }
 
 .hero img {
@@ -18,10 +17,10 @@
     object-fit: cover;
 }
 
-/* 3. HERO OVERLAY POSITIONING (Required) */
+/* Overlaying the text and article on the image */
 .hero h1 {
-    position: absolute; /* Place on top of image */
-    top: 100px;
+    position: absolute; 
+    top: 50px;
     left: 50%;
     transform: translateX(-50%);
     background-color: rgba(0, 51, 102, 0.8);
@@ -31,80 +30,56 @@
 }
 
 .hero article {
-    position: absolute; /* Place on top of image */
-    top: 250px;
-    right: 10%;
-    background-color: rgba(255, 255, 255, 0.85);
+    position: absolute; 
+    bottom: 50px;
+    right: 50px;
+    background-color: rgba(255, 255, 255, 0.9);
     padding: 20px;
     max-width: 500px;
     border-radius: 5px;
 }
 
-/* 4. ARTICLE IMAGE FLOAT (Required) */
+/* ERROR FIX: Image inside hero article MUST float right */
 .hero article img {
-    float: right; /* Audit looks for this specifically */
+    float: right; 
     width: 150px;
     margin-left: 15px;
     margin-bottom: 10px;
 }
 
-/* 5. HEADER & NAV (Fixed Contrast) */
+/* Fix for Contrast Violations */
 header {
     background-color: #003366;
-    padding: 10px 5%;
+    padding: 15px 5%;
     display: flex;
     justify-content: space-between;
-    align-items: center;
-}
-
-.nav-bar {
-    display: flex;
-    width: 100%;
-    justify-content: space-between;
-    align-items: center;
-}
-
-nav ul {
-    display: flex;
-    list-style: none;
-    gap: 30px;
 }
 
 nav a {
-    color: #ffffff; /* High contrast white */
+    color: #ffffff; /* White text on blue background */
     text-decoration: none;
     font-weight: bold;
 }
 
-nav a:hover {
-    color: #FFCC00;
+/* Section and Grid styling */
+.history-container, .adventure-container {
+    padding: 40px 5%;
 }
 
-/* 6. GRID LAYOUT */
 .services-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 20px;
-    padding: 20px;
 }
 
 .services-grid img {
     width: 100%;
-    height: 200px;
-    object-fit: cover;
     border-radius: 8px;
 }
 
-/* 7. FOOTER */
 footer {
     background-color: #003366;
     color: white;
     text-align: center;
     padding: 20px;
-    margin-top: 50px;
-}
-
-.socialmedia img {
-    width: 30px;
-    margin: 10px;
 }
