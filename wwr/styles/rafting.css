@@ -15,18 +15,16 @@
     box-sizing: border-box;
 }
 
-/* BASE TEXT COLOR */
 body {
     color: var(--text-color);
     background-color: var(--white);
+    font-family: Arial, sans-serif;
 }
 
-/* HEADER (CSS GRID + WCAG FIX) */
+/* HEADER (CSS GRID) */
 header {
     background-color: var(--primary-color);
     padding: 20px 5%;
-    color: var(--white);
-    /* ✅ CRITICAL FIX */
 }
 
 .nav-bar {
@@ -37,6 +35,7 @@ header {
 
 .logo {
     width: 80px;
+    height: auto;
 }
 
 /* NAVIGATION (FLEX) */
@@ -48,6 +47,7 @@ header nav {
 
 header nav a {
     color: var(--white);
+    /* Fixed contrast: ensured white text on dark blue */
     text-decoration: none;
     font-weight: bold;
 }
@@ -77,9 +77,9 @@ header nav a:hover {
     color: var(--white);
     padding: 1.5rem;
     text-align: center;
+    width: 80%;
 }
 
-/* HERO ARTICLE */
 .hero article {
     position: absolute;
     bottom: 30px;
@@ -89,7 +89,6 @@ header nav a:hover {
     max-width: 450px;
 }
 
-/* FLOAT REQUIREMENT */
 .hero article img {
     float: right;
     width: 120px;
@@ -97,7 +96,7 @@ header nav a:hover {
     margin-bottom: 10px;
 }
 
-/* HISTORY SECTION */
+/* HISTORY SECTION (GRID) */
 .history-container {
     padding: 40px 5%;
 }
@@ -119,7 +118,7 @@ header nav a:hover {
     border-radius: 8px;
 }
 
-/* ADVENTURE SECTION */
+/* ADVENTURE SECTION (GRID - 5 COLUMNS) */
 .adventure-container {
     padding: 40px 5%;
 }
@@ -131,17 +130,21 @@ header nav a:hover {
 
 .services-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 20px;
+    grid-template-columns: repeat(5, 1fr);
+    /* Explicitly set to 5 columns as per wireframe */
+    gap: 15px;
+}
+
+.services-grid figure {
+    margin: 0;
+    text-align: center;
 }
 
 .services-grid img {
     width: 100%;
+    height: auto;
     border-radius: 8px;
-}
-
-.services-grid figure {
-    text-align: center;
+    object-fit: cover;
 }
 
 .services-grid figcaption {
@@ -150,7 +153,7 @@ header nav a:hover {
     color: var(--primary-color);
 }
 
-/* FOOTER */
+/* FOOTER (FLEX) */
 footer {
     background-color: var(--primary-color);
     color: var(--white);
@@ -158,6 +161,7 @@ footer {
     justify-content: space-between;
     align-items: center;
     padding: 20px 5%;
+    margin-top: 20px;
 }
 
 .socialmedia {
@@ -167,6 +171,7 @@ footer {
 
 .socialmedia img {
     width: 30px;
+    height: auto;
 }
 
 /* ACCESSIBILITY */
