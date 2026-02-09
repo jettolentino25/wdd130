@@ -4,68 +4,61 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Word Puzzle - User Entry</title>
-    <link rel="stylesheet" href="poll-form.css ">
+    <title>W05 Activity: Poll Form</title>
+    <link rel="stylesheet" href="poll-form.css">
 </head>
 
 <body>
-
     <header>
-        <h1>Word Puzzle Registration</h1>
+        <h1>W05 Activity: Poll Form</h1>
     </header>
 
     <main>
         <form action="#" method="post">
-            <div>
-                <label for="fullname">Full Name:</label>
-                <input type="text" id="fullname" name="fullname" required>
-            </div>
-            <div class="form-item">
-                <label for="fullname">Full Name:</label>
-                <input type="text" id="fullname" name="fullname">
-            </div>
-            <div>
-                <label for="useremail">Email Address:</label>
-                <input type="email" id="useremail" name="useremail" required>
-            </div>
-            <div class="form-item column2">
-                <label for="fullname">Full Name:</label>
-                <input type="text" id="fullname" name="fullname">
-            </div>
-            <div class="form-item column2">
-                <label for="useremail">Email:</label>
-                <input type="email" id="useremail" name="useremail">
-            </div>
+            <fieldset>
+                <legend>Contact Information</legend>
+                <div class="form-item column2">
+                    <label for="fullname">Full Name:</label>
+                    <input type="text" id="fullname" name="fullname" required>
+                </div>
+                <div class="form-item column2">
+                    <label for="useremail">Email:</label>
+                    <input type="email" id="useremail" name="useremail" required>
+                </div>
+            </fieldset>
 
-            <div>
-                <label for="browser">What is your favorite browser?</label>
-                <select id="browser" name="browser">
-                    <option value="chrome">Chrome</option>
-                    <option value="safari">Safari</option>
-                    <option value="edge">Edge</option>
-                    <option value="brave">Brave</option>
-                    <option value="other">Other</option>
-                </select>
-            </div>
+            <fieldset>
+                <legend>Questions</legend>
+                <div class="form-item column1">
+                    <label for="browser">What is your favorite browser?</label>
+                    <select id="browser" name="browser">
+                        <option value="chrome">Chrome</option>
+                        <option value="safari">Safari</option>
+                        <option value="edge">Edge</option>
+                        <option value="brave">Brave</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
 
-            <div>
-                <label for="pet">Do you have a household pet?</label>
-                <input type="checkbox" id="pet" name="pet">
-            </div>
+                <div class="form-item column1">
+                    <label for="pet">Do you have a household pet?</label>
+                    <input type="checkbox" id="pet" name="pet">
+                </div>
 
-            <div>
-                <label for="feedback">List the places you have lived:</label>
-                <textarea id="feedback" name="feedback" rows="4" placeholder="City, State, Country..."></textarea>
-            </div>
+                <div class="form-item">
+                    <label for="feedback" style="text-align: left; padding-bottom: 0.5rem;">List the places you have
+                        lived:</label>
+                    <textarea id="feedback" name="feedback" rows="4" placeholder="City, State, Country..."></textarea>
+                </div>
+            </fieldset>
 
             <button type="submit">Submit Poll</button>
         </form>
     </main>
 
     <footer>
-        <p>&copy; 2026 Programming Assignment</p>
+        <p>&copy; 2026 Programming Assignment | Poll Form</p>
     </footer>
-
 </body>
 
 </html>
