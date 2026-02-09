@@ -1,4 +1,4 @@
-/* ROOT VARIABLES */
+/* ROOT VARIABLES - Standardized to use variables only */
 :root {
     --primary-color: #003366;
     --accent-color: #FFCC00;
@@ -18,13 +18,15 @@
 body {
     color: var(--text-color);
     background-color: var(--white);
-    font-family: Arial, sans-serif;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-/* HEADER (CSS GRID) */
+/* HEADER (FIXED CONTRAST VIOLATION) */
 header {
     background-color: var(--primary-color);
-    padding: 20px 5%;
+    padding: 1rem 5%;
+    /* This color rule fixes the 1.00:1 and 1.67:1 contrast errors */
+    color: var(--white);
 }
 
 .nav-bar {
@@ -42,12 +44,12 @@ header {
 header nav {
     display: flex;
     justify-content: flex-end;
-    gap: 20px;
+    gap: 1.5rem;
 }
 
 header nav a {
     color: var(--white);
-    /* Fixed contrast: ensured white text on dark blue */
+    /* Ensures links are also high contrast */
     text-decoration: none;
     font-weight: bold;
 }
@@ -70,69 +72,60 @@ header nav a:hover {
 
 .hero h1 {
     position: absolute;
-    top: 40px;
+    top: 2rem;
     left: 50%;
     transform: translateX(-50%);
     background-color: var(--transparent-blue);
     color: var(--white);
-    padding: 1.5rem;
+    padding: 1rem;
+    width: 90%;
     text-align: center;
-    width: 80%;
 }
 
 .hero article {
     position: absolute;
-    bottom: 30px;
+    bottom: 2rem;
     right: 5%;
     background-color: var(--transparent-white);
-    padding: 20px;
-    max-width: 450px;
+    padding: 1.25rem;
+    max-width: 400px;
 }
 
+/* Float requirement for hero article image */
 .hero article img {
     float: right;
-    width: 120px;
-    margin-left: 15px;
-    margin-bottom: 10px;
+    width: 100px;
+    margin-left: 10px;
 }
 
-/* HISTORY SECTION (GRID) */
+/* HISTORY SECTION */
 .history-container {
-    padding: 40px 5%;
-}
-
-.history-container h2 {
-    text-align: center;
-    margin-bottom: 20px;
+    padding: 3rem 5%;
 }
 
 .history-content {
     display: grid;
     grid-template-columns: 2fr 1fr;
-    gap: 30px;
+    gap: 2rem;
     align-items: center;
 }
 
 .history-content img {
     width: 100%;
-    border-radius: 8px;
+    height: auto;
+    border-radius: 5px;
 }
 
-/* ADVENTURE SECTION (GRID - 5 COLUMNS) */
+/* ADVENTURE SECTION (GRID) */
 .adventure-container {
-    padding: 40px 5%;
-}
-
-.adventure-container h2 {
-    text-align: center;
-    margin-bottom: 20px;
+    padding: 2rem 5%;
 }
 
 .services-grid {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
-    /* Explicitly set to 5 columns as per wireframe */
-    gap: 15px;
+    /* 5 images across as per instructions */
+    gap: 1rem;
 }
 
 .services-grid figure {
@@ -143,38 +136,35 @@ header nav a:hover {
 .services-grid img {
     width: 100%;
     height: auto;
-    border-radius: 8px;
-    object-fit: cover;
+    border-radius: 5px;
 }
 
 .services-grid figcaption {
-    margin-top: 10px;
+    margin-top: 0.5rem;
     font-weight: bold;
-    color: var(--primary-color);
 }
 
-/* FOOTER (FLEX) */
+/* FOOTER */
 footer {
     background-color: var(--primary-color);
     color: var(--white);
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px 5%;
-    margin-top: 20px;
+    padding: 1.5rem 5%;
 }
 
 .socialmedia {
     display: flex;
-    gap: 15px;
+    gap: 1rem;
 }
 
 .socialmedia img {
-    width: 30px;
+    width: 32px;
     height: auto;
 }
 
-/* ACCESSIBILITY */
+/* ACCESSIBILITY FOCUS */
 a:focus {
-    outline: 2px solid var(--accent-color);
+    outline: 3px solid var(--accent-color);
 }
