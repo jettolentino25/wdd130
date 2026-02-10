@@ -15,18 +15,18 @@
     box-sizing: border-box;
 }
 
-/* BASE TEXT COLOR */
+/* BASE STYLES */
 body {
     color: var(--text-color);
     background-color: var(--white);
+    font-family: Arial, Helvetica, sans-serif;
 }
 
-/* HEADER (CSS GRID + WCAG FIX) */
+/* HEADER */
 header {
     background-color: var(--primary-color);
     padding: 20px 5%;
     color: var(--white);
-    /* ✅ CRITICAL FIX */
 }
 
 .nav-bar {
@@ -39,7 +39,7 @@ header {
     width: 80px;
 }
 
-/* NAVIGATION (FLEX) */
+/* NAVIGATION */
 header nav {
     display: flex;
     justify-content: flex-end;
@@ -57,7 +57,7 @@ header nav a:hover {
     text-decoration: underline;
 }
 
-/* HERO SECTION */
+/* HERO */
 .hero {
     position: relative;
 }
@@ -79,7 +79,6 @@ header nav a:hover {
     text-align: center;
 }
 
-/* HERO ARTICLE */
 .hero article {
     position: absolute;
     bottom: 30px;
@@ -89,7 +88,6 @@ header nav a:hover {
     max-width: 450px;
 }
 
-/* FLOAT REQUIREMENT */
 .hero article img {
     float: right;
     width: 120px;
@@ -97,7 +95,7 @@ header nav a:hover {
     margin-bottom: 10px;
 }
 
-/* HISTORY SECTION */
+/* HISTORY */
 .history-container {
     padding: 40px 5%;
 }
@@ -119,7 +117,7 @@ header nav a:hover {
     border-radius: 8px;
 }
 
-/* ADVENTURE SECTION */
+/* ADVENTURE */
 .adventure-container {
     padding: 40px 5%;
 }
@@ -148,6 +146,90 @@ header nav a:hover {
     margin-top: 10px;
     font-weight: bold;
     color: var(--primary-color);
+}
+
+/* ===================== */
+/* CONTACT PAGE STYLES */
+/* ===================== */
+
+.contact-header {
+    padding: 40px 5%;
+    text-align: center;
+}
+
+.contact-header address {
+    margin-top: 15px;
+    font-style: normal;
+    line-height: 1.6;
+}
+
+.contact-layout-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    padding: 40px 5%;
+}
+
+.map-area iframe {
+    width: 100%;
+    border: none;
+}
+
+/* FORM */
+.form-area form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.form-item {
+    display: flex;
+    flex-direction: column;
+}
+
+fieldset {
+    border: 1px solid #ccc;
+    padding: 15px;
+}
+
+fieldset legend {
+    font-weight: bold;
+}
+
+.form-item.checkbox {
+    flex-direction: row;
+}
+
+.form-button {
+    background-color: var(--primary-color);
+    color: var(--white);
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+.form-button:hover {
+    background-color: var(--accent-color);
+    color: var(--primary-color);
+}
+
+/* EMPLOYEE PROFILES */
+.employee-profiles {
+    padding: 40px 5%;
+    text-align: center;
+}
+
+.profile-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.profile-grid img {
+    width: 100%;
+    border-radius: 8px;
 }
 
 /* FOOTER */
