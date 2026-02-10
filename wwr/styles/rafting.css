@@ -57,101 +57,7 @@ header nav a:hover {
     text-decoration: underline;
 }
 
-/* HERO */
-.hero {
-    position: relative;
-}
-
-.hero img {
-    width: 100%;
-    height: auto;
-    display: block;
-}
-
-.hero h1 {
-    position: absolute;
-    top: 40px;
-    left: 50%;
-    transform: translateX(-50%);
-    background-color: var(--transparent-blue);
-    color: var(--white);
-    padding: 1.5rem;
-    text-align: center;
-}
-
-.hero article {
-    position: absolute;
-    bottom: 30px;
-    right: 5%;
-    background-color: var(--transparent-white);
-    padding: 20px;
-    max-width: 450px;
-}
-
-.hero article img {
-    float: right;
-    width: 120px;
-    margin-left: 15px;
-    margin-bottom: 10px;
-}
-
-/* HISTORY */
-.history-container {
-    padding: 40px 5%;
-}
-
-.history-container h2 {
-    text-align: center;
-    margin-bottom: 20px;
-}
-
-.history-content {
-    display: grid;
-    grid-template-columns: 2fr 1fr;
-    gap: 30px;
-    align-items: center;
-}
-
-.history-content img {
-    width: 100%;
-    border-radius: 8px;
-}
-
-/* ADVENTURE */
-.adventure-container {
-    padding: 40px 5%;
-}
-
-.adventure-container h2 {
-    text-align: center;
-    margin-bottom: 20px;
-}
-
-.services-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 20px;
-}
-
-.services-grid img {
-    width: 100%;
-    border-radius: 8px;
-}
-
-.services-grid figure {
-    text-align: center;
-}
-
-.services-grid figcaption {
-    margin-top: 10px;
-    font-weight: bold;
-    color: var(--primary-color);
-}
-
-/* ===================== */
-/* CONTACT PAGE STYLES */
-/* ===================== */
-
+/* CONTACT HEADER */
 .contact-header {
     padding: 40px 5%;
     text-align: center;
@@ -163,6 +69,7 @@ header nav a:hover {
     line-height: 1.6;
 }
 
+/* CONTACT GRID */
 .contact-layout-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -190,6 +97,9 @@ header nav a:hover {
 fieldset {
     border: 1px solid #ccc;
     padding: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
 }
 
 fieldset legend {
@@ -197,7 +107,13 @@ fieldset legend {
 }
 
 .form-item.checkbox {
-    flex-direction: row;
+    display: flex;
+    align-items: center;
+}
+
+input[type="radio"],
+input[type="checkbox"] {
+    margin-right: 8px;
 }
 
 .form-button {
@@ -214,7 +130,7 @@ fieldset legend {
     color: var(--primary-color);
 }
 
-/* EMPLOYEE PROFILES */
+/* EMPLOYEES */
 .employee-profiles {
     padding: 40px 5%;
     text-align: center;

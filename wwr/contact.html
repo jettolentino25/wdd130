@@ -8,7 +8,7 @@
         content="Contact The Great Northern Rush for information about our white water rafting trips in Cagayan de Oro.">
     <meta name="author" content="Aaron J Evan M. Tolentino">
     <title>Contact Us | The Great Northern Rush</title>
-    <link rel="stylesheet" href="styles/rafting1.css">
+    <link rel="stylesheet" href="styles/rafting.css">
 </head>
 
 <body>
@@ -42,13 +42,17 @@
                 <h2>Our Location</h2>
                 <iframe
                     src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3948.865187167683!2d124.6300481!3d8.4141126!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x32ff8df479b1853d%3A0xc3f348003612d17c!2sXavier%20Heights%20Subdivision!5e0!3m2!1sen!2sph!4v1700000000000"
-                    width="600" height="450" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+                    width="600" height="450" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+                    title="Map showing the location of The Great Northern Rush">
                 </iframe>
             </section>
 
             <section class="form-area">
                 <h2>Send Us a Message</h2>
+
+                <!-- EXACTLY ONE FORM -->
                 <form action="#" method="post">
+
                     <div class="form-item">
                         <label for="userName">Name:</label>
                         <input type="text" id="userName" name="userName" required>
@@ -61,9 +65,21 @@
 
                     <fieldset>
                         <legend>Purpose of Message:</legend>
-                        <label><input type="radio" name="purpose" value="general" required> General Inquiry</label>
-                        <label><input type="radio" name="purpose" value="reservation"> Reservation Question</label>
-                        <label><input type="radio" name="purpose" value="suggestion"> Website Suggestion</label>
+
+                        <label for="purpose-general">
+                            <input type="radio" id="purpose-general" name="purpose" value="general" required>
+                            General Inquiry
+                        </label>
+
+                        <label for="purpose-reservation">
+                            <input type="radio" id="purpose-reservation" name="purpose" value="reservation">
+                            Reservation Question
+                        </label>
+
+                        <label for="purpose-suggestion">
+                            <input type="radio" id="purpose-suggestion" name="purpose" value="suggestion">
+                            Website Suggestion
+                        </label>
                     </fieldset>
 
                     <div class="form-item">
@@ -72,12 +88,16 @@
                     </div>
 
                     <div class="form-item checkbox">
-                        <label>
-                            <input type="checkbox" name="newsletter"> Please subscribe me to the monthly newsletter
+                        <label for="newsletter">
+                            <input type="checkbox" id="newsletter" name="newsletter">
+                            Please subscribe me to the monthly newsletter
                         </label>
                     </div>
 
-                    <button type="submit" class="form-button">Get in Touch!</button>
+                    <button type="submit" class="form-button">
+                        Get in Touch!
+                    </button>
+
                 </form>
             </section>
         </div>
@@ -87,15 +107,15 @@
             <div class="profile-grid">
                 <figure>
                     <img src="images/employee1.jpg" alt="Profile image of Lead River Guide">
-                    <figcaption>Lead River Guide</figcaption>
+                    <figcaption>Piolo Pascual- Lead River Guide</figcaption>
                 </figure>
                 <figure>
                     <img src="images/employee2.jpg" alt="Profile image of Office Manager">
-                    <figcaption>Office Manager</figcaption>
+                    <figcaption>Vice Ganda-Office Manager</figcaption>
                 </figure>
                 <figure>
                     <img src="images/employee3.jpg" alt="Profile image of Safety Officer">
-                    <figcaption>Safety Officer</figcaption>
+                    <figcaption>Coco Martin-Safety Officer</figcaption>
                 </figure>
             </div>
         </section>
