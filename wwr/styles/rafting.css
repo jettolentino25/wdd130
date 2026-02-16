@@ -265,3 +265,58 @@ footer .socialmedia img {
         width: 100%;
     }
 }
+
+/* ADVENTURE SECTION */
+.adventure {
+    width: 100%;
+    padding: 4rem 2rem;
+    display: flex;
+    flex-wrap: wrap;
+    /* allows images to move to next row on small screens */
+    justify-content: center;
+    /* centers images horizontally */
+    gap: 2rem;
+    /* space between images */
+    background-color: rgb(var(--primary-color));
+    color: rgb(var(--accent2-color));
+    text-align: center;
+    /* centers h2 and figcaptions */
+}
+
+.adventure h2 {
+    width: 100%;
+    margin-bottom: 2rem;
+    font-size: 2rem;
+    color: rgb(var(--accent2-color));
+}
+
+.adventure figure {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    flex: 1 1 180px;
+    /* flexible: min width 180px, can grow */
+    max-width: 220px;
+    /* prevents images from getting too large */
+}
+
+.adventure figure img {
+    width: 100%;
+    height: auto;
+    /* keeps aspect ratio flexible */
+    border-radius: 8px;
+    object-fit: cover;
+    box-shadow: 0 4px 8px rgba(62, 106, 16, 0.3);
+    transition: transform 0.3s ease;
+}
+
+.adventure figure img:hover {
+    transform: scale(1.05);
+}
+
+.adventure figcaption {
+    font-size: 1rem;
+    font-weight: 600;
+    color: rgb(var(--accent2-color));
+}
