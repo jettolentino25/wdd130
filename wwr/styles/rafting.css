@@ -194,3 +194,74 @@ footer .socialmedia img {
     max-width: 40px;
     margin-left: 1rem;
 }
+
+/* NEWSLETTER LAYOUT */
+.newsletter {
+    background-color: #6ab5f7;
+    /* The yellow from your image */
+    padding: 2rem 5%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.newsletter h2 {
+    color: rgb(var(--primary-color));
+    font-size: 2rem;
+    font-weight: 800;
+    text-transform: none;
+}
+
+.newsletter-inputs {
+    display: flex;
+    flex-direction: row;
+    /* Makes it horizontal like the image */
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    width: 100%;
+}
+
+.newsletter label {
+    font-weight: 700;
+    color: rgb(var(--primary-color));
+    font-family: var(--heading-font);
+}
+
+.newsletter input {
+    padding: 0.6rem;
+    border: 1px solid rgb(var(--primary-color));
+    border-radius: 4px;
+    width: 250px;
+    /* Adjust width to match image proportions */
+}
+
+.newsletter button {
+    background-color: rgb(var(--primary-color));
+    /* Navy blue */
+    color: white;
+    padding: 0.7rem 2rem;
+    border: none;
+    border-radius: 8px;
+    font-weight: 700;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.newsletter button:hover {
+    background-color: rgb(var(--secondary-color));
+}
+
+/* Responsive fix for mobile */
+@media (max-width: 800px) {
+    .newsletter-inputs {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .newsletter input {
+        width: 100%;
+    }
+}
