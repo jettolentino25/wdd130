@@ -1,14 +1,14 @@
 :root {
-    --primary-color: 11 45 77;
-    /* deep navy */
-    --secondary-color: 15 107 78;
-    /* evergreen */
-    --accent-color: 255 210 63;
-    /* paddle yellow */
-    --accent2-color: 255 255 255;
-    /* white */
-    --accent3-color: 0 0 0;
-    /* black */
+    --primary-color: 10 30 100;
+    /* deep blue for main text & header */
+    --secondary-color: 20 60 150;
+    /* slightly lighter blue for footer */
+    --accent-color: 70 130 255;
+    /* bright blue for highlights/buttons */
+    --accent2-color: 220 240 255;
+    /* light sky blue for text backgrounds */
+    --accent3-color: 0 0 50;
+    /* dark navy for accents */
     --body-font: Arial, Helvetica, sans-serif;
     --heading-font: "Trebuchet MS", Trebuchet, Arial, sans-serif;
 }
@@ -40,7 +40,7 @@ header {
 }
 
 .logo {
-    width: 100px;
+    width: 120px;
     height: auto;
 }
 
@@ -60,10 +60,10 @@ nav a:hover {
     color: rgb(var(--accent-color));
 }
 
-/* HERO SECTION */
+/* HERO */
 .tripshero {
     position: relative;
-    min-height: 500px;
+    min-height: 600px;
     overflow: hidden;
 }
 
@@ -88,7 +88,6 @@ nav a:hover {
 .tripshero-text h1 {
     margin-bottom: 1rem;
     font-family: var(--heading-font);
-    color: rgb(var(--primary-color));
 }
 
 .tripshero-text p {
@@ -96,19 +95,20 @@ nav a:hover {
 }
 
 /* TRIPS LIST */
-.trips-list {
+.trips {
     display: flex;
     flex-wrap: wrap;
+    flex-direction: row;
     justify-content: center;
-    gap: 3rem;
+    gap: 4rem;
     padding: 4rem 2rem;
 }
 
 .trip {
     display: flex;
-    flex-direction: column;
-    align-items: center;
+    flex-wrap: wrap;
     max-width: 350px;
+    align-items: center;
     text-align: center;
 }
 
@@ -120,14 +120,11 @@ nav a:hover {
     margin-bottom: 1rem;
 }
 
-.trip-text h2 {
-    margin-bottom: 0.5rem;
-    font-family: var(--heading-font);
-    color: rgb(var(--primary-color));
-}
-
-.trip-text p {
-    margin-bottom: 1rem;
+.tripstext {
+    display: grid;
+    grid-template-rows: auto auto auto;
+    text-align: center;
+    gap: 0.5rem;
 }
 
 /* BUTTONS */
@@ -155,7 +152,7 @@ a.btn:hover {
 
 table {
     width: 100%;
-    max-width: 800px;
+    max-width: 900px;
     margin: 0 auto;
     border-collapse: collapse;
 }
@@ -167,3 +164,33 @@ td {
 }
 
 th {
+    background-color: rgb(var(--accent-color));
+}
+
+tfoot {
+    background-color: rgb(var(--accent-color)/0.35);
+    font-style: italic;
+}
+
+/* FOOTER */
+footer {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    align-items: center;
+    padding: 1rem 5%;
+    background-color: rgb(var(--secondary-color));
+    color: rgb(var(--accent2-color));
+}
+
+footer p {
+    margin: 0;
+}
+
+footer .socialmedia {
+    justify-self: end;
+}
+
+footer .socialmedia img {
+    max-width: 40px;
+    margin-left: 1rem;
+}
