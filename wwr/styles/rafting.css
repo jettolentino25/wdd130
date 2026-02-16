@@ -9,7 +9,7 @@
     /* light sky blue for text backgrounds */
     --accent3-color: 0 0 50;
     /* dark navy for accents */
-    --body-font: Arial, Helvetica, sans-serif;
+    --body-font: Trebuchet MS, Helvetica, sans-serif;
     --heading-font: "Trebuchet MS", Trebuchet, Arial, sans-serif;
 }
 
@@ -267,6 +267,11 @@ footer .socialmedia img {
 }
 
 /* ADVENTURE SECTION */
+:root {
+    --adventure-bg-color: 20 60 150;
+    /* default background color, change this to adjust */
+}
+
 .adventure {
     width: 100%;
     padding: 4rem 2rem;
@@ -277,10 +282,12 @@ footer .socialmedia img {
     /* centers images horizontally */
     gap: 2rem;
     /* space between images */
-    background-color: rgb(var(--primary-color));
+    background-color: rgb(var(--adventure-bg-color));
     color: rgb(var(--accent2-color));
     text-align: center;
     /* centers h2 and figcaptions */
+    transition: background-color 0.3s ease;
+    /* smooth color change if updated dynamically */
 }
 
 .adventure h2 {
